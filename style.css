@@ -1,0 +1,146 @@
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:  #06172fd7;
+    margin:0;
+}
+header{
+    border-bottom: #ffffff solid;
+    background-color: #031D42;
+    margin-bottom: 10px;
+}
+
+
+#divHeader{
+    margin-right: 70px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+
+}
+
+#pesquisa{
+    height: 30px;
+    width: 1100px;
+    margin-left: 70px;
+    font-size: 17px;
+    border-radius: 20px;
+    padding-left: 20px;
+    
+}
+#logo{
+    margin-left:40px ;
+    border-radius:20px ;
+}
+#menu{
+    margin-left:60px ;
+    border-radius:20px ;
+
+}
+#logo:hover, #menu:hover{
+    background-color:#27254d;
+}
+
+.linha{
+    margin-top: 15px;
+    margin-bottom: 15px ;
+    justify-content: space-around;
+    display: flex;
+}
+.cartaz{
+    position: relative;
+    margin: 10px;
+    color: white;
+    text-align: center;
+    width: 230px  ;
+    height: 530px;
+    background-color: #031D42;
+    border: solid 3px rgb(255, 255, 255);
+    border-radius: 10px;
+    scale: 0.95;
+}
+
+.filme{
+    border-radius: 10px;
+    margin-top: 20px ;
+    width: 200px;
+    height: 300px;
+    border: solid 3px rgb(255, 255, 255);
+    text-align: center;
+}
+
+.nomeFilme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    border: solid 3px rgb(255, 255, 255);
+    margin: 10px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    color: white;
+    border-top: #ffffff solid;
+    background-color: #031D42;
+    height: 70px;
+}
+
+.imdb{
+    width: 85px;
+    height: 40px;
+    position: absolute;
+    bottom: 23px;
+    left: 70px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #031D42;
+    border: 3px solid white;
+    color: yellow;
+    font-weight: bold;
+
+}
+.saibaMais{
+    width: 160px;
+    height: 40px;
+    position: absolute;
+    bottom: 515px;
+    left: 32px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #031D42;
+    border: 3px solid white;
+    color: yellow;
+    font-weight: bold;
+}
+.cartaz:hover{
+    scale: 1.0;
+    transition: 0.2s;
+}
+.imdb:hover{
+    scale: 1.13;
+    border: yellow 3px solid;
+    transition: 0.2s;
+}
+.saibaMais:hover{
+    scale: 1.13;
+    border: yellow 3px solid;
+    transition: 0.2s;
+}
+
+.titulo{
+    padding: 0.6%;
+    border-top: solid 3px white;
+    border-bottom: solid 3px white;
+    color: white;
+    text-align: center;
+    background-color: #031D42;
+}
