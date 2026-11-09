@@ -1,0 +1,52 @@
+name: CI e deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: Validar site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verificar arquivos e referências locais
+        run: python scripts/validar_site.py
+      - name: Preparar arquivos para publicação
+        if: github.event_name == 'push'
+        run: |
+          mkdir site
+          cp ./*.html ./*.css site/
+          cp -R img site/img
+      - name: Guardar site validado
+        if: github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    name: Publicar no GitHub Pages
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publicacao.outputs.page_url }}
+    steps:
+      - name: Publicar site
+        id: publicacao
+        uses: actions/deploy-pages@v4
+
